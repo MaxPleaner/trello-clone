@@ -4,6 +4,10 @@ TrelloClone.Collections.Lists = Backbone.Collection.extend({
   
   url: 'api/lists',
   
+  comparator: function(list) {
+    return list.get('ord');
+  },
+  
   getOrFetch: function (id) {
     var listMatch = this.get(id);
     if (!listMatch) {

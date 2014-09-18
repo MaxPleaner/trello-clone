@@ -5,4 +5,4 @@
 
 json.title @board.title
 
-json.lists @board.lists, :title
+json.lists @board.lists, :title, :ord

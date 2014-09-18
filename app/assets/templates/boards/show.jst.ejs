@@ -5,7 +5,7 @@
 <hr>
 <ul class="lists">
   <% board.lists().forEach(function(list){ %>
-    <li><%= list.escape('title') %></li>
+    <li><b>Ord is <%= list.escape('ord') %></b> <%= list.escape('title') %></li>
   <% }); %>
 </ul>
 
