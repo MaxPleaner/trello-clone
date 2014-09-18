@@ -4,7 +4,7 @@ TrelloClone.Collections.Boards = Backbone.Collection.extend({
   getOrFetch: function (id) {
     var boardMatch = this.get(id);
     if (!boardMatch) {
-      boardMatch = new TrelloClone.Models.Voard({
+      boardMatch = new TrelloClone.Models.Board({
         id: id
       });
       var that = this;

@@ -1,6 +1,6 @@
-<% boards.models.forEach(function(model){ %>
+<% boards.models.forEach(function(board){ %>
   <li>
-    <%= model.escape('title') %>
+    <a href="#boards/<%= board.id %>"><%= board.escape('title') %></a>
   </li>
 <% }) %>
 
