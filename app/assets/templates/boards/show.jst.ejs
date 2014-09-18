@@ -2,5 +2,12 @@
   <li class="title"><%= board.escape('title') %></li>
 </ul>
 
+<hr>
+<ul class="lists">
+  <% board.lists().forEach(function(list){ %>
+    <li><%= list.escape('title') %></li>
+  <% }); %>
+</ul>
+
 
 <a href="#">Back to Boards Index</a>
