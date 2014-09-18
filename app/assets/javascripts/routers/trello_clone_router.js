@@ -5,12 +5,7 @@ TrelloClone.Routers.FeedRouter = Backbone.Router.extend({
   },
   
   routes: {
-    '': 'index',
-    'boards': 'boardsIndex'
-  },
-  
-  index: function () {
-    alert("hello from backbone");
+    '': 'boardsIndex',
   },
   
   boardsIndex: function () {
