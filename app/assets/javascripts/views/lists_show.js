@@ -1,6 +1,6 @@
 TrelloClone.Views.ListsShow = Backbone.CompositeView.extend({
   
-  tagName: 'section',
+  tagName: 'li',
   
   className: 'list-show',
   
