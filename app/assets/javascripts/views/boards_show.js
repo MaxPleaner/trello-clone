@@ -1,14 +1,14 @@
-TrelloClone.Views.BoardsShow = Backbone.View.extend({
+TrelloClone.Views.BoardsShow = Backbone.CompositeView.extend({
   
   template: JST['boards/show'],
   
   initialize: function () {
     this.listenTo(this.model, 'sync add destroy', this.render);
-    this.listenTo(this.model.lists(), "add", this.render);
+    this.listenTo(this.model.lists(), "add", this.addList);
   },
   
   events: {
-    "click button.delete": "delete"
+    "click button.delete": "removeBoard"
   },
   
   render: function () {
@@ -16,16 +16,27 @@ TrelloClone.Views.BoardsShow = Backbone.View.extend({
     that.$el.html(that.template({
       board: that.model
     }));
+    this.attachSubviews();
     return this;
   },
   
-  delete: function (event) {
+  removeBoard: function (event) {
     event.preventDefault();
     var confirmation = confirm("are you sure?");
     if (confirmation === true) {
       this.model.destroy();
       Backbone.history.navigate("#", { trigger: true });
     }
-  }
+  },
+  
+  addList: function (list) {
+     var listShow =
+       new TrelloClone.Views.ListsShow({ model: list });
+     this.addSubview(".lists", listShow);
+   },
   
 })
+
+// use list Subviews, don't iterate over lists
+
+// user card subview in list, don't iterate

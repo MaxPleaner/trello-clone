@@ -16,3 +16,5 @@ TrelloClone.Views.BoardsIndex = Backbone.View.extend({
   }
   
 })
+
+// Use subviews, don't iterate in template
