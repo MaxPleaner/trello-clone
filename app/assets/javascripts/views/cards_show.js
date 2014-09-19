@@ -11,12 +11,25 @@ TrelloClone.Views.CardsShow = Backbone.View.extend({
   },
   
   events: {
+    "mouseenter": "showDelete",
+    "mouseleave": "hideDelete",
     "click .deleteCard": "deleteCard"
+  },
+  
+  showDelete: function (event) {
+    this.$('.deleteCard').removeClass("invisible");
+  },
+  
+  hideDelete: function (event) {
+    this.$(".deleteCard").addClass("invisible");
   },
   
   deleteCard: function (event) {
     event.preventDefault();
-    this.model.destroy();
+    var confirmation = confirm("are you sure?");
+    if (confirmation === true) {
+      this.model.destroy();
+    }
   },
   
   render: function () {

@@ -32,9 +32,10 @@ TrelloClone.Views.ListsShow = Backbone.CompositeView.extend({
 
    deleteList: function (event) {
      event.preventDefault();
-     // var redirectUrl = "boards/" + this.model.id;
-     this.model.destroy();
-      // Backbone.history.navigate(redirectUrl, { trigger: true });
+     var confirmation = confirm("are you sure?");
+     if (confirmation === true) {
+       this.model.destroy();
+     }
    },
    
    addCard: function (card) {
