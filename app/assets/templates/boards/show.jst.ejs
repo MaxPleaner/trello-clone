@@ -1,8 +1,11 @@
+<hr />
+
+<h3>Board Show</h3>
+
 <ul class="board">
   <li class="title"><%= board.escape('title') %></li>
 </ul>
 
-<hr>
 <ul class="lists">
   <em>Lists</em>
   <% board.lists().forEach(function(list){ %>
@@ -10,7 +13,7 @@
       <ul>
         <em>Cards</em>
         <% list.cards().forEach(function(card){ %>
-          <li><%= card.escape('title') %></li>
+          <li><%= card.escape('title') %> - <b>Ord <%= card.escape('ord') %></b></li>
         <% }) %>
       </ul>
     </li>
@@ -22,3 +25,5 @@
 <a href="#boards/<%= board.get("id") %>/lists/new">Make a new List</a>
 
 <a href="#">Back to Boards Index</a>
+
+<hr />
