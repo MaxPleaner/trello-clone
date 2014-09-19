@@ -15,3 +15,38 @@
 
 @import "bootstrap";
 @import "font-awesome";
+
+li {
+  list-style: none;
+}
+
+.board-index {
+}
+
+.board-link {
+  border: 1px solid black;
+  padding: 30px;
+  margin: 10px;
+  width: 100px;
+  border-radius: 10px;
+  float: left;
+}
+
+.new-board{
+  display: block;
+}
+
+button.delete{
+  display: block;
+}
+
+
+.listShows{
+  margin-bottom: 20px;
+}
+
+.boardList{
+  border: 1px solid blue;
+  width: 300px;
+  padding: 30px;
+}

@@ -1,19 +1,27 @@
-<hr />
+<div class="row">
+  
+  <div class="col-xs-12">
+    
+    <h2><%= board.escape('title') %></h2>
+  
+    <ul class="lists"></ul>
 
-<h3>Board Show</h3>
+  </div>
+  
+</div>
 
-<ul class="board">
-  <li class="title"><%= board.escape('title') %></li>
-</ul>
+<div class="row">
+  
+  <div class="col-xs-3">
+    
+    <button class="delete">Delete Board</button>
 
-<ul class="lists">
-  <em>Lists</em>
-</ul>
+  </div>
 
-<button class="delete">Delete Board</button>
+  <div class="col-xs-3">
+    
+    <a href="#">Back to Boards Index</a>
 
-<a href="#boards/<%= board.get("id") %>/lists/new">Make a new List</a>
+  </div>
 
-<a href="#">Back to Boards Index</a>
-
-<hr />
+</div>

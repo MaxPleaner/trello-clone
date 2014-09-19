@@ -1,7 +1,19 @@
-<% boards.models.forEach(function(board){ %>
-  <li>
-    <a href="#boards/<%= board.id %>"><%= board.escape('title') %></a>
-  </li>
-<% }) %>
+<div class="row">
+  
+  <div class="col-xs-12">
 
-<a href="#boards/new">Make a new board</a>
+    <h2>Boards</h2>
+
+    <% boards.models.forEach(function(board){ %>
+      <li>
+    
+        <div class="board-link">
+          <a href="#boards/<%= board.id %>"><%= board.escape('title') %></a>      
+        </div>
+    
+      </li>
+    <% }) %>
+  
+  </div>
+  
+</div>
