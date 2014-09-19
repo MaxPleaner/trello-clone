@@ -1,7 +1,10 @@
 TrelloClone.Views.BoardsIndex = Backbone.View.extend({
+  
   template: JST['boards/index'],
   
   tagName: 'ul',
+  
+  className: 'board-index',
   
   initialize: function() {
     this.listenTo(this.collection, 'sync add', this.render)
@@ -16,5 +19,3 @@ TrelloClone.Views.BoardsIndex = Backbone.View.extend({
   }
   
 })
-
-// Use subviews, don't iterate in template
