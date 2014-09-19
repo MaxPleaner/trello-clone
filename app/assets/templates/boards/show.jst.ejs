@@ -4,8 +4,16 @@
 
 <hr>
 <ul class="lists">
+  <em>Lists</em>
   <% board.lists().forEach(function(list){ %>
-    <li><b>Ord is <%= list.escape('ord') %></b> <%= list.escape('title') %></li>
+    <li><b>Ord is <%= list.escape('ord') %></b> <%= list.escape('title') %>
+      <ul>
+        <em>Cards</em>
+        <% list.cards().forEach(function(card){ %>
+          <li><%= card.escape('title') %></li>
+        <% }) %>
+      </ul>
+    </li>
   <% }); %>
 </ul>
 

@@ -3,6 +3,4 @@
 #  - its lists
 #    - the cards for each list
 
-json.title @board.title
-
-json.lists @board.lists, :title, :ord
+json.partial!("board", :board => @board, :lists => @board.lists)
