@@ -1,18 +1,25 @@
 TrelloClone.Views.BoardsShow = Backbone.CompositeView.extend({
   
-  tagName: 'li',
+  tagName: 'section',
   
-  className: 'board-show',
+  className: 'boardShow',
   
   template: JST['boards/show'],
   
+  // collection: this.model.lists(),
+  
   initialize: function () {
-    this.listenTo(this.model, 'sync add destroy', this.render);
+    this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model.lists(), "add sync", this.addList);
+    this.listenTo(this.model.lists(), "remove", this.removeList);
     this.model.lists().each(function(list){
       this.addList(list);
     }.bind(this));
     // this.lists.fetch();
+    var newListView = new TrelloClone.Views.ListsNew({
+      model: this.model
+    });
+    this.addSubview('.new-list', newListView);
   },
   
   events: {
@@ -24,13 +31,17 @@ TrelloClone.Views.BoardsShow = Backbone.CompositeView.extend({
     that.$el.html(that.template({
       board: that.model
     }));
-    var newListView = new TrelloClone.Views.ListsNew({
-      model: that.model
-    });
-    that.$el.append(newListView.render().$el)
+
+
+    console.log('rending board-show attaching LISTS')
     this.attachSubviews();
-    $('.lists').sortable();
-        $(".cards").sortable({connectWith: ".cards"});
+    this.$('.lists').sortable({
+      items: "li:not(.unsortable)"
+    });
+    this.$(".cards").sortable({
+      connectWith: ".cards",
+      items: "li:not(.unsortable)"
+    });
     return this;
   },
   
@@ -47,7 +58,17 @@ TrelloClone.Views.BoardsShow = Backbone.CompositeView.extend({
      var listShow =
        new TrelloClone.Views.ListsShow({ model: list });
      this.addSubview(".lists", listShow);
-     this.render();
+   },
+   
+   removeList: function (list) {
+     var subview = _.find(
+       this.subviews(".lists"),
+       function (subview) {
+         return subview.model === list;
+       }
+     );
+
+     this.removeSubview(".lists", subview);
    },
   
 })

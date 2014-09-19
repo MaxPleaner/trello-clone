@@ -32,6 +32,18 @@ Backbone.CompositeView = Backbone.View.extend({
       });
     });
   },
+  delegateEvents: function(){
+    //delegate our own events
+    Backbone.View.prototype.delegateEvents.call(this);
+    var view = this;
+    _(this.subviews()).each(function (subviews, selector) {
+      _(subviews).each(function (subview) {
+        //delegate our subview's events too
+        subview.delegateEvents();
+      });
+    });
+  },
+  
 
   remove: function () {
     Backbone.View.prototype.remove.call(this);

@@ -1,19 +1,20 @@
-<div class="row">
-  
-  <div class="col-xs-12">
+<div class="centered">
 
-    <h2>Boards</h2>
+  <header>
+    <h1>Welcome to Trello(clone)!</h1>
+    <h3>These are your boards:</h3>
+  </header>
 
-    <% boards.models.forEach(function(board){ %>
-      <li>
-    
-        <div class="board-link">
-          <a href="#boards/<%= board.id %>"><%= board.escape('title') %></a>      
-        </div>
-    
-      </li>
-    <% }) %>
-  
+  <div class="row">
+    <div class="col-xs-12">
+      <% boards.models.forEach(function(board){ %>
+        <li>    
+          <div class="board-link">
+            <a href="#boards/<%= board.id %>"><%= board.escape('title') %></a>    
+          </div>  
+        </li>
+      <% }) %>
+    </div>
   </div>
-  
+
 </div>

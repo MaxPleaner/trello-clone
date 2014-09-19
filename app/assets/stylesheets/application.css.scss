@@ -16,11 +16,66 @@
 @import "bootstrap";
 @import "font-awesome";
 
+* {
+//  border: 1px solid green;
+}
+
+body {
+    background: #EBEBFA;
+}
+
+.centered {
+  width: 50%;
+  margin: 0 auto;
+}
+
 li {
   list-style: none;
 }
 
-.board-index {
+.boardShow{
+  margin-left: 50px;
+//  width: 50%;
+}
+
+.boardHeader {
+  margin-bottom: 20px;
+}
+
+.listHeader {
+  margin-bottom: 10px;
+}
+
+.cardsList {
+  margin-bottom: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.deleteList {
+  margin-top: 15px;
+}
+
+.newCard {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.cardShow {
+  margin-bottom: 20px;
+}
+
+li.listShow {
+  border: 1px solid red;
+  border-radius: 5px;
+  padding: 15px;
+  margin-right: 10px;
+  width: 32%;
+  float: left;
+  margin-bottom: 20px;
+  background: #FFE6F0;
 }
 
 .board-link {
@@ -32,21 +87,55 @@ li {
   float: left;
 }
 
-.new-board{
-  display: block;
+.newList {
+  margin-left: 50px;
+  width: 25%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  background: #CCFFFF;
 }
 
-button.delete{
-  display: block;
+.newListSubview {
+  text-align: center;
 }
 
-
-.listShows{
-  margin-bottom: 20px;
+.boardLinks {
+  border: 1px solid black;
+  padding: 10px;
+  margin-top: 20px;
+  width: 25%;
+  margin-left: 50px;
+  margin-bottom: 100px;
 }
 
-.boardList{
-  border: 1px solid blue;
-  width: 300px;
-  padding: 30px;
-}
+//
+//.new-board{
+//  display: block;
+//}
+//
+//button.delete{
+//  display: block;
+//}
+//
+//
+//.listShows{
+//  margin-bottom: 20px;
+//}
+//
+//.boardList{
+//  border-top: 1px solid blue;
+//  border-right: 1px solid blue;
+//  border-left: 1px solid blue;
+//  width: 50%;
+//  padding: 30px;
+//  margin-top: 40px;
+//}
+//
+//.new_card {
+//  border-bottom: 1px solid blue;
+//  border-right: 1px solid blue;
+//  border-left: 1px solid blue;
+////  border-top: 1px solid blue;
+//  width: 50%;
+//}

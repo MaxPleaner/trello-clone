@@ -2,9 +2,9 @@ TrelloClone.Views.BoardsNew = Backbone.View.extend({
   
     template: JST['boards/new'],
     
-    tagName: 'form',
+    tagName: "section",
     
-    className: 'board-form',
+    className: "boardsNew centered",
     
     events: {
       "submit form": "submit"
@@ -25,7 +25,7 @@ TrelloClone.Views.BoardsNew = Backbone.View.extend({
       newBoard.save({}, {
         success: function () {
           TrelloClone.Collections.boards.add(newBoard);
-          Backbone.history.navigate("boards/" + newBoard.get('id'), { trigger: true });
+          Backbone.history.navigate("/", { trigger: true });
         }
       });
     }

@@ -1,1 +1,9 @@
-<li><%= card.escape('title') %> - <b>Ord <%= card.escape('ord') %></b></li>
+<li>
+  Title: <%= card.escape('title') %>
+  <br />
+  Description: <%= card.escape("description") %>
+  <br />
+  Ranking: <%= card.escape('ord') %>
+  <br />
+  <button class="deleteCard">Delete</button>
+</li>
