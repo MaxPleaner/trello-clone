@@ -25,7 +25,7 @@ body {
 }
 
 .centered {
-  width: 50%;
+  width: 500px;
   margin: 0 auto;
 }
 
@@ -72,7 +72,7 @@ li.listShow {
   border-radius: 5px;
   padding: 15px;
   margin-right: 10px;
-  width: 32%;
+  width: 300px;
   float: left;
   margin-bottom: 20px;
   background: #FFE6F0;
@@ -89,7 +89,7 @@ li.listShow {
 
 .newList {
   margin-left: 50px;
-  width: 25%;
+  width: 250px;
   border: 1px solid black;
   border-radius: 5px;
   padding: 10px;
@@ -104,7 +104,7 @@ li.listShow {
   border: 1px solid black;
   padding: 10px;
   margin-top: 20px;
-  width: 25%;
+  width: 250px;
   margin-left: 50px;
   margin-bottom: 100px;
 }
@@ -112,6 +112,15 @@ li.listShow {
 .invisible {
   visibility: hidden;
 }
+
+.ui-sortable-helper {
+ text-shadow: 2px 2px #FFFF99;
+ -ms-transform: rotate(7deg); /* IE 9 */
+ -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+ transform: rotate(7deg);
+}
+
+
 
 //
 //.new-board{

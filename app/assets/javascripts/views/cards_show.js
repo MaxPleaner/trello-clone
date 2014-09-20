@@ -13,7 +13,9 @@ TrelloClone.Views.CardsShow = Backbone.View.extend({
   events: {
     "mouseenter": "showDelete",
     "mouseleave": "hideDelete",
-    "click .deleteCard": "deleteCard"
+    "click .deleteCard": "deleteCard",
+    "sortstart": "dragEffect",
+    "sortstop": "endDragEffect"
   },
   
   showDelete: function (event) {
@@ -30,6 +32,14 @@ TrelloClone.Views.CardsShow = Backbone.View.extend({
     if (confirmation === true) {
       this.model.destroy();
     }
+  },
+  
+  dragEffect: function (event, ui) {
+    $(this.currentTarget).addClass("dragged");
+  },
+  
+  endDragEffect: function (event) {
+    $(this.currentTarget).removeClass("dragged");
   },
   
   render: function () {
