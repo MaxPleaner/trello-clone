@@ -1,3 +1,14 @@
+<div class="text-center">
+
+<em>About this app: <br>
+    This is a Backbone.js app built on top of Rails. <br>
+    It consumes the Rails JSON API asynchronously so that <br>
+    assets don't have to be reloaded - because of this, it is a  <br>
+    "single page app". <br>
+</em>
+<p>See it on Github at <a href="http://github.com/maxpleaner/TrelloClone">
+  http://github.com/maxpleaner/TrelloClone</a></p>
+  <hr>
 <h1>Sign In</h1>
 
 <form action="/session" method="post">
@@ -8,13 +19,16 @@
   <label>Password<br>
     <input name="user[password]" type="password"><br>
   </label><br>
-  <input type="submit" value="Submit" class="btn btn-primary"><br>
+  <input type="submit" value="Submit" class="btn btn-default"><br>
 </form>
 
-
 <aside>
-  <em>
-    Note: In order to access seed data, log in as
-    <b>email: 'ripe@gmail.com', password: 'password'</b>
-  </em>
+  <form action="<%= session_url %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="user[email]" value="ripe@gmail.com">
+    <input type="hidden" name="user[password]" value="password">
+    <input class="btn btn-primary" type="submit" value="Login As Guest">
+  </form>
 </aside>
+
+</div>

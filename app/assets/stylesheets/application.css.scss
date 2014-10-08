@@ -16,12 +16,27 @@
 @import "bootstrap";
 @import "font-awesome";
 
+@mixin box-shadow {
+  -webkit-box-shadow: 0px 0px 18px 0px rgba(38, 65, 76, 0.75);
+  -moz-box-shadow:    0px 0px 18px 0px rgba(38, 65, 76, 0.75);
+  box-shadow:         0px 0px 18px 0px rgba(38, 65, 76, 0.75);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.test {
+  border: 1px solid black;
+}
+
 * {
 //  border: 1px solid green;
 }
 
 body {
     background: #EBEBFA;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .centered {
@@ -49,6 +64,7 @@ li {
 .cardsList {
   margin-bottom: 20px;
   border: 1px solid black;
+  @include box-shadow;
   border-radius: 5px;
   padding: 15px;
 }
@@ -58,6 +74,7 @@ li {
 }
 
 .newCard {
+  @include box-shadow;
   border: 1px solid black;
   border-radius: 5px;
   padding: 15px;
@@ -68,6 +85,7 @@ li {
 }
 
 li.listShow {
+  @include box-shadow;
   border: 1px solid red;
   border-radius: 5px;
   padding: 15px;
@@ -79,6 +97,7 @@ li.listShow {
 }
 
 .board-link {
+  @include box-shadow;
   border: 1px solid black;
   padding: 30px;
   margin: 10px;
@@ -90,6 +109,7 @@ li.listShow {
 .newList {
   margin-left: 50px;
   width: 250px;
+  @include box-shadow;
   border: 1px solid black;
   border-radius: 5px;
   padding: 10px;
@@ -101,6 +121,7 @@ li.listShow {
 }
 
 .boardLinks {
+  @include box-shadow;
   border: 1px solid black;
   padding: 10px;
   margin-top: 20px;
